@@ -4,6 +4,7 @@ import {Header} from './site/Header';
 import {Body} from './site/Body';
 import {Footer} from './site/Footer';
 import {StudentsComponent} from 'src/method map/StudentComponent';
+import {TopCarsComponent} from './method map/TopCarsComponent';
 
 export type StudentType = {
     id: number;
@@ -24,6 +25,16 @@ const students: Array<StudentType> = [
     {id: 10, name: 'Charles', age: 98},
     {id: 11, name: 'Christopher', age: 100},
 ];
+export type CarType = {
+    manufacturer: string;
+    model: string;
+}
+const topCars: Array<CarType> = [
+    {manufacturer:'BMW', model:'m5cs'},
+    {manufacturer:'Mercedes', model:'e63s'},
+    {manufacturer:'Audi', model:'rs6'},
+];
+
 
 function App() {
     return (
@@ -32,6 +43,7 @@ function App() {
             <Body title={'Body Component'}/>
             <Footer title={'Footer Component'}/>
             <StudentsComponent students={students}/>
+            <TopCarsComponent topCars={topCars}/>
         </>
     );
 }
