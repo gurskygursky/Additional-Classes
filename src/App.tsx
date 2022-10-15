@@ -6,6 +6,7 @@ import {Footer} from './site/Footer';
 import {StudentsComponent} from 'src/method map/StudentComponent';
 import {TopCarsComponent} from './method map/TopCarsComponent';
 import {ButtonSubscriber} from './button/ButtonSubscriber';
+import {UniversalButton} from './components/UniversalButton';
 
 export type StudentType = {
     id: number;
@@ -38,6 +39,15 @@ const topCars: Array<CarType> = [
 
 
 function App() {
+
+    const onClickButtonHandler = (nameSubscriber: string, age?: number) => {
+        console.log(nameSubscriber, age);
+    }
+
+    const onClickStupidButtonHandler = () => {
+        console.log(`I'm stupid button`);
+    }
+
     return (
         <>
             <Header title={'Header Component'}/>
@@ -46,6 +56,11 @@ function App() {
             <StudentsComponent students={students}/>
             <TopCarsComponent topCars={topCars}/>
             <ButtonSubscriber/>
+            <UniversalButton title={'UniversalButton-1'} callbackHandler={() => onClickButtonHandler('Vasya')}/>
+            <UniversalButton title={'UniversalButton-2'} callbackHandler={() => onClickButtonHandler('ne Vasya')}/>
+            <UniversalButton title={'UniversalButton-age'} callbackHandler={() => onClickButtonHandler('ne Vasya', 100)}/>
+            <UniversalButton title={'UniversalButton-age'} callbackHandler={() => onClickButtonHandler('ne Vasya', 10)}/>
+            <UniversalButton title={'UniversalButton-stupid'} callbackHandler={onClickStupidButtonHandler}/>
         </>
     );
 }
