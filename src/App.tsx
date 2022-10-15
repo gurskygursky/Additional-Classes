@@ -5,6 +5,7 @@ import {Body} from './site/Body';
 import {Footer} from './site/Footer';
 import {StudentsComponent} from 'src/method map/StudentComponent';
 import {TopCarsComponent} from './method map/TopCarsComponent';
+import {ButtonSubscriber} from './button/ButtonSubscriber';
 
 export type StudentType = {
     id: number;
@@ -44,6 +45,7 @@ function App() {
             <Footer title={'Footer Component'}/>
             <StudentsComponent students={students}/>
             <TopCarsComponent topCars={topCars}/>
+            <ButtonSubscriber/>
         </>
     );
 }
