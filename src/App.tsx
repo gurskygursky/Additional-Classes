@@ -7,6 +7,7 @@ import {StudentsComponent} from 'src/method map/StudentComponent';
 import {TopCarsComponent} from './method map/TopCarsComponent';
 import {ButtonSubscriber} from './button/ButtonSubscriber';
 import {UniversalButton} from './components/UniversalButton';
+import {HookUseState} from './hoosUseState/HookUseState';
 
 export type StudentType = {
     id: number;
@@ -61,6 +62,7 @@ function App() {
             <UniversalButton title={'UniversalButton-age'} callbackHandler={() => onClickButtonHandler('ne Vasya', 100)}/>
             <UniversalButton title={'UniversalButton-age'} callbackHandler={() => onClickButtonHandler('ne Vasya', 10)}/>
             <UniversalButton title={'UniversalButton-stupid'} callbackHandler={onClickStupidButtonHandler}/>
+            <HookUseState/>
         </>
     );
 }
