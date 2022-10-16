@@ -8,6 +8,7 @@ import {TopCarsComponent} from './method map/TopCarsComponent';
 import {ButtonSubscriber} from './button/ButtonSubscriber';
 import {UniversalButton} from './components/UniversalButton';
 import {HookUseState} from './hoosUseState/HookUseState';
+import {Banknotes} from './banknotes/Banknotes';
 
 export type StudentType = {
     id: number;
@@ -63,6 +64,7 @@ function App() {
             <UniversalButton title={'UniversalButton-age'} callbackHandler={() => onClickButtonHandler('ne Vasya', 10)}/>
             <UniversalButton title={'UniversalButton-stupid'} callbackHandler={onClickStupidButtonHandler}/>
             <HookUseState/>
+            <Banknotes/>
         </>
     );
 }
