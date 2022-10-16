@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
+import {NewComponent} from './NewComponent';
 
-type BanknoteValueType = 'ALL' | 'RUB' | 'USD' | 'EUR';
+export type BanknoteValueType = 'ALL' | 'RUB' | 'USD' | 'EUR';
 
-type BanknoteType = {
+export type BanknoteType = {
     banknote: string;
     value: number;
     banknoteNumber: string;
@@ -39,23 +40,26 @@ export const Banknotes = () => {
     }
 
     return (
-        <div>
-            <ul>
-                {currentMoney.map((banknote, index) => {
-                    return (
-                        <li key={index}>
-                            <span><b>{banknote.banknote}     </b></span>
-                            <span style={{fontStyle: 'italic'}}>{banknote.value}</span>
-                            <span>{banknote.banknoteNumber}</span>
-                        </li>
-                    )
-                })}
-            </ul>
-            <button onClick={() => onClickFilterHandler('RUB')}>RUB</button>
-            <button onClick={() => onClickFilterHandler('USD')}>USD</button>
-            <button onClick={() => onClickFilterHandler('EUR')}>EUR</button>
-            <button onClick={() => onClickFilterHandler('ALL')}>ALL</button>
-        </div>
+        <NewComponent currentMoney={currentMoney}
+                      onClickFilterHandler={onClickFilterHandler}
+        />
+        // <div>
+        //     <ul>
+        //         {currentMoney.map((banknote, index) => {
+        //             return (
+        //                 <li key={index}>
+        //                     <span><b>{banknote.banknote}     </b></span>
+        //                     <span style={{fontStyle: 'italic'}}>{banknote.value}</span>
+        //                     <span>{banknote.banknoteNumber}</span>
+        //                 </li>
+        //             )
+        //         })}
+        //     </ul>
+        //     <button onClick={() => onClickFilterHandler('RUB')}>RUB</button>
+        //     <button onClick={() => onClickFilterHandler('USD')}>USD</button>
+        //     <button onClick={() => onClickFilterHandler('EUR')}>EUR</button>
+        //     <button onClick={() => onClickFilterHandler('ALL')}>ALL</button>
+        // </div>
     );
 };
 
