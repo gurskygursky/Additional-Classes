@@ -1,19 +1,17 @@
 import React from 'react';
 
 type ButtonPropsType = {
-    handleInputValue: string;
-    sendMessage: (inputValue: string) => void;
-    setHandleInputValue: (inputValue: string) => void;
+    title: string;
+    callbackHandler: () => void;
 }
 
 export const Button = (props: ButtonPropsType) => {
 
-    const onClickSendMessageHandler = () => {
-        props.sendMessage(props.handleInputValue);
-        props.setHandleInputValue('');
+    const onClickHandler = () => {
+        props.callbackHandler();
     }
 
     return (
-        <button onClick={onClickSendMessageHandler}>+</button>
+        <button onClick={onClickHandler}>{props.title}</button>
     );
 }

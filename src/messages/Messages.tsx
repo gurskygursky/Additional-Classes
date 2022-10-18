@@ -24,16 +24,18 @@ export const Messages = () => {
         setMessages([{message}, ...messages]);
     }
 
+    const sendMessageCallback = () => {
+        sendMessage(handleInputValue);
+        setHandleInputValue('');
+    }
+
     return (
         <div>
             <InputButton sendMessage={sendMessage}/>
             <Input handleInputValue={handleInputValue}
                    setHandleInputValue={setHandleInputValue}
             />
-            <Button sendMessage={sendMessage}
-                    handleInputValue={handleInputValue}
-                    setHandleInputValue={setHandleInputValue}
-            />
+            <Button title={'Send'} callbackHandler={sendMessageCallback}/>
             <ul>
                 {messages.map((message: MessageType, index) => <li key={index}>
                     {message.message}
