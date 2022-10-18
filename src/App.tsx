@@ -9,6 +9,7 @@ import {ButtonSubscriber} from './button/ButtonSubscriber';
 import {UniversalButton} from './components/UniversalButton';
 import {HookUseState} from './hoosUseState/HookUseState';
 import {Banknotes} from './banknotes/Banknotes';
+import {Messages} from './messages/Messages';
 
 export type StudentType = {
     id: number;
@@ -65,6 +66,7 @@ function App() {
             <UniversalButton title={'UniversalButton-stupid'} callbackHandler={onClickStupidButtonHandler}/>
             <HookUseState/>
             <Banknotes/>
+            <Messages/>
         </>
     );
 }
